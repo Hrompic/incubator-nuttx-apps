@@ -61,7 +61,7 @@ int main(int argc, FAR char *argv[])
 
   printf("Dhtxx app is running.\n");
 
-  fd = open("/dev/dht0", O_RDWR);
+  fd = open("/dev/hum0", O_RDWR);
 
   for (i = 0; i < 20; i++)
     {
