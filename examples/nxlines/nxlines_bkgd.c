@@ -356,6 +356,6 @@ void nxlines_test(NXWINDOW hwnd)
 
           angle = 0;
         }
-      usleep(500*1000);
+      //usleep(500*1000);
     }
 }

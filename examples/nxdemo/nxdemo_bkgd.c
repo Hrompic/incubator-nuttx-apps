@@ -232,7 +232,7 @@ static void nxdemo_demo_1(NXWINDOW hwnd)
   i = 0;
   center.x = center.y = circle_radius * 2;
 
-  while (i < 270)
+  while (0)//i < 270)
     {
       if (direction_x == false)
         {
@@ -292,7 +292,7 @@ static void nxdemo_demo_1(NXWINDOW hwnd)
   center.x = g_nxdemo.xres >> 1;
   center.y = g_nxdemo.yres >> 1;
 
-  for (i = 0; i<MIN(g_nxdemo.xres, g_nxdemo.yres)>> 1; i++)
+  for (i = 0; i<MIN(g_nxdemo.xres, g_nxdemo.yres) >> 1; i++)
     {
       circle_radius = i;
 
@@ -303,31 +303,32 @@ static void nxdemo_demo_1(NXWINDOW hwnd)
           printf("nxnxdemo: nx_drawcircle failed: %d\n", ret);
         }
 
-      usleep(100000);
-
+      //usleep(100000);
+/*
       color[0] = CONFIG_EXAMPLES_NXDEMO_BGCOLOR;
       ret = nx_fillcircle((NXWINDOW)hwnd, &center, circle_radius, color);
       if (ret < 0)
         {
           printf("nxnxdemo: nx_drawcircle failed: %d\n", ret);
         }
+        */
     }
 
   for (i = MIN(g_nxdemo.xres, g_nxdemo.yres) >> 1; i > 1; i--)
     {
       circle_radius = i;
-
+    /*  
       color[0] = CONFIG_EXAMPLES_NXDEMO_DRAWCOLOR;
       ret = nx_fillcircle((NXWINDOW)hwnd, &center, circle_radius, color);
       if (ret < 0)
         {
           printf("nxnxdemo: nx_drawcircle failed: %d\n", ret);
         }
-
-      usleep(100000);
+*/
+//      usleep(100000);
 
       color[0] = CONFIG_EXAMPLES_NXDEMO_BGCOLOR;
-      ret = nx_fillcircle((NXWINDOW)hwnd, &center, circle_radius, color);
+      ret = nx_drawcircle((NXWINDOW)hwnd, &center, circle_radius, 1, color);
       if (ret < 0)
         {
           printf("nxnxdemo: nx_drawcircle failed: %d\n", ret);
@@ -364,7 +365,7 @@ static void nxdemo_demo_2(NXWINDOW hwnd)
           printf("nxnxdemo: nx_drawcircle failed: %d\n", ret);
         }
 
-      usleep(100000);
+      //usleep(100000);
 
       color[0] = CONFIG_EXAMPLES_NXDEMO_BGCOLOR;
       ret = nx_fill((NXWINDOW)hwnd, &rect, color);
@@ -521,8 +522,12 @@ static void nxdemo_demo_4(NXWINDOW hwnd)
 
 void nxdemo_hello(NXWINDOW hwnd)
 {
+  printf("Nx demo 1!!!\n");
   nxdemo_demo_1((NXWINDOW)hwnd);
+  printf("Nx demo 2!!!\n");
   nxdemo_demo_2((NXWINDOW)hwnd);
+  printf("Nx demo 3!!!\n");
   nxdemo_demo_3((NXWINDOW)hwnd);
+  printf("Nx demo 4!!!\n");
   nxdemo_demo_4((NXWINDOW)hwnd);
 }
