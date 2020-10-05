@@ -291,13 +291,13 @@ int main(int argc, FAR char *argv[])
 
   /* Determine the size and position of the window */
 
-  g_nxterm_vars.wndo.wsize.w = g_nxterm_vars.xres / 2 +
-                               g_nxterm_vars.xres / 4;
-  g_nxterm_vars.wndo.wsize.h = g_nxterm_vars.yres / 2 +
-                               g_nxterm_vars.yres / 4;
+  g_nxterm_vars.wndo.wsize.w = g_nxterm_vars.xres; // 2 +
+                               //g_nxterm_vars.xres / 4;
+  g_nxterm_vars.wndo.wsize.h = g_nxterm_vars.yres; // 2 +
+                               //g_nxterm_vars.yres / 4;
 
-  g_nxterm_vars.wpos.x       = g_nxterm_vars.xres / 8;
-  g_nxterm_vars.wpos.y       = g_nxterm_vars.yres / 8;
+  g_nxterm_vars.wpos.x       = 0;// g_nxterm_vars.xres / 8;
+  g_nxterm_vars.wpos.y       = 0;//g_nxterm_vars.yres / 8;
 
   /* Set the window position */
 
@@ -323,7 +323,7 @@ int main(int argc, FAR char *argv[])
       goto errout_with_hwnd;
     }
 
-  /* Open the toolbar */
+  /* Open the toolbar 
 
   printf("nxterm_main: Add toolbar to window\n");
   ret = nxtk_opentoolbar(g_nxterm_vars.hwnd,
@@ -335,7 +335,7 @@ int main(int argc, FAR char *argv[])
       goto errout_with_hwnd;
     }
 
-  /* Sleep a little bit to allow the server to catch up */
+   Sleep a little bit to allow the server to catch up */
 
   sleep(2);
 
