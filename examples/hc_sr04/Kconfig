@@ -1,0 +1,29 @@
+#
+# For a description of the syntax of this configuration file,
+# see the file kconfig-language.txt in the NuttX tools repository.
+#
+
+config EXAMPLES_HC_SR04
+	tristate "Hc_sr04 sensor example"
+	default n
+	---help---
+		Enable the Hc_sr04 example
+
+if EXAMPLES_HC_SR04
+
+config EXAMPLES_HC_SR04_PROGNAME
+	string "Program name"
+	default "hc_sr04"
+	---help---
+		This is the name of the program that will be used when the NSH ELF
+		program is installed.
+
+config EXAMPLES_HELLO_PRIORITY
+	int "hc_sr04 task priority"
+	default 100
+
+config EXAMPLES_HELLO_STACKSIZE
+	int "hc_sr04 stack size"
+	default DEFAULT_TASK_STACKSIZE
+
+endif
