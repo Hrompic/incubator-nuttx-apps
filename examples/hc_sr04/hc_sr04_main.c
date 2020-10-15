@@ -41,7 +41,7 @@
 
 int main(int argc, FAR char *argv[])
 {
-    char dist[6];
+    char dist[8];
     printf("HC_SR04 app is running.\n");
 
     int fd = open("/dev/dist0", O_RDWR);
@@ -49,9 +49,9 @@ int main(int argc, FAR char *argv[])
     for(int i=0; i<20; i++)
     {
         int ret = read(fd, dist, sizeof(dist));
-
+        printf("Read %d bytes\n", ret);
         if(!ret) return -1;
-        else printf("Distance: %s\n", dist);
+        else printf("Distance: %s", dist);
         sleep(1);
     }
   return 0;
